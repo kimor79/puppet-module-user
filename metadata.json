@@ -1,0 +1,17 @@
+{
+  "name": "igromik-user",
+  "version": "0.0.1",
+  "author": "igromik",
+  "summary": "Wrapper around the user resource type",
+  "license": "BSD",
+  "source": "git@github.com:kimor79/puppet-module-user.git",
+  "project_page": "https://github.com/kimor79/puppet-module-user",
+  "issues_url": "https://github.com/kimor79/puppet-module-user/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
