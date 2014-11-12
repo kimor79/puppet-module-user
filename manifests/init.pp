@@ -20,21 +20,21 @@
 #
 # Copyright 2014 Kimo Rosenbaum
 #
-class user (
-  $use_pe = false,
-) {
+class user {
 
   $defaults = hiera_hash('user::defaults', {})
-
   $users = hiera_hash('user::user', {})
-
-  $rtype = $use_pe ? {
-    true    => 'user::pe_user',
-    default => 'user::user',
-  }
 
   if $users {
     validate_hash($users)
-    create_resources($rtype, $users, $defaults)
+    create_resources('user::user', $users, $defaults)
+  }
+
+  $pe_defaults = hiera_hash('user::pe_defaults', {})
+  $pe_users = hiera_hash('user::pe_user', {})
+
+  if $pe_users {
+    validate_hash($pe_users)
+    create_resources('user::pe_user', $pe_users, $pe_defaults)
   }
 }
